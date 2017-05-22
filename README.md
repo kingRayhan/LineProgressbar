@@ -1,4 +1,10 @@
 # Jquery Line Progress Bar
+A light weight jquery progressbar plugin
+
+
+
+
+
 
 ##### Include
 ```html
