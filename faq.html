@@ -31,10 +31,3 @@ _Answer_: Yes
 #### What's new in latest release?
 
  _Answer_: See Changelog.
-
-```html
-def self.database_type
-    return 'DEV' + db_suffix if ENV['Environment'] == 'DEV'
-    ENV_MAP.fetch(ENV['Environment'].downcase.to_sym, 'QA') + db_suffix
-  end
-```
