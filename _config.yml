@@ -1,4 +1,4 @@
-baseurl: "/LineProgressbar" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
@@ -13,6 +13,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
 # Serving
-port:    5000
-host:    127.0.0.1
+port: 5000
+host: 127.0.0.1
 
