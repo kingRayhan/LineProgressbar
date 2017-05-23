@@ -1,0 +1,14 @@
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+# Build settings
+markdown: kramdown
+kramdown:
+  enable_coderay: true
+  syntax_highlighter: coderay 
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock

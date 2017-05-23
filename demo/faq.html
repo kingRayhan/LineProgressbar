@@ -1,0 +1,40 @@
+---
+layout: doc
+title: FAQ
+---
+
+
+
+#### Can I use it for free? 
+_Answer_: Yes
+
+<hr>
+
+#### Can I use it for commerce project?
+
+ _Answer_: Yes
+
+<hr>
+
+#### Has it any licence?
+
+ _Answer_: Yes , it's under **MIT LICENCE**. [Check here](https://github.com/kingRayhan/LineProgressbar/blob/master/LICENSE)
+
+<hr>
+
+#### Can i ask for a new functionality?
+
+ _Answer_: Yes! Go to Github [issues page](https://github.com/kingRayhan/LineProgressbar/issues) and ask for a feature.
+
+<hr>
+
+#### What's new in latest release?
+
+ _Answer_: See Changelog.
+
+```html
+def self.database_type
+    return 'DEV' + db_suffix if ENV['Environment'] == 'DEV'
+    ENV_MAP.fetch(ENV['Environment'].downcase.to_sym, 'QA') + db_suffix
+  end
+```
