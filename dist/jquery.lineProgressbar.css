@@ -1,6 +1,7 @@
 .progressbar {
     width: 100%;
-	margin: 35px 0;
+	margin-top: 5px;
+	margin-bottom: 35px;
 	position: relative;
 	background-color: #EEEEEE;
 }

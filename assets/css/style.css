@@ -14,6 +14,10 @@ body {
     font-family: 'Raleway', sans-serif;
     font-weight: 300; }
 
+.demo-title h1, .demo-title h2, .demo-title h3, .demo-title h4 {
+  font-family: 'Roboto Condensed', sans-serif;
+  padding-left: 12px; }
+
 .doc-nav {
   /**/ }
   .doc-nav .title {

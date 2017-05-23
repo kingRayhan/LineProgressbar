@@ -9,11 +9,15 @@
 
     <!-- Bootstrap -->
     <link href="https://bootswatch.com/flatly/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="dist/jquery.lineProgressbar.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -38,25 +42,20 @@
 
     <div class="container">
       <div class="row">
-
-      <div class="col-md-3">
-        {% include doc-nav.html %}
-      </div>
-      <div class="col-md-9">
-        <div class="content">
-          {{ content | markdownify }}
-        </div>
-      </div>
-
-
-
-      </div>
-    </div>
+        <div class="col-md-12">
+          <div class="content">
+            {{ content | markdownify }}
+          </div><!-- .content -->
+        </div><!-- .col-md-12 -->
+      </div><!-- .row -->
+    </div><!-- .conainer -->
 
 
      
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="dist/jquery.lineProgressbar.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
