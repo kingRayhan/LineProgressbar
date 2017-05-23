@@ -1,0 +1,33 @@
+{
+    "name": "LineProgressbar",
+    "title": "Jquery Line Progressbar",
+    "description": "A light weight jquery progressbar plugin",
+    "keywords": [
+      "progressbar"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "King Rayhan",
+        "url": "https://github.com/kingRayhan"
+    },
+    "maintainers": [
+        {
+            "name": "KingRayhan",
+            "email": "rayhan095@gmail.com",
+            "url": "http://rayhan.info"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/kingRayhan/LineProgressbar/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/kingRayhan/LineProgressbar/issues",
+    "homepage": "https://kingrayhan.github.io/LineProgressbar/",
+    "docs": "https://kingrayhan.github.io/LineProgressbar/installation.html",
+    "download": "https://github.com/kingRayhan/LineProgressbar/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.9"
+    }
+}
