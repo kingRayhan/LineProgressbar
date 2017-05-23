@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Jquery Line Progress Bar</title>
+    <title>Jquery Line Progress Bar | {{ page.title }}</title>
 
     <!-- OpenGraph Metas -->
     {% include og-meta.html %}
@@ -33,13 +33,7 @@
     {% include header.html %}
 
 
-    <section class="page-title">
-      <div class="container">
-        <div class="row">
-          <h1>{{ page.title }}</h1>
-        </div>
-      </div>
-    </section>
+    {% include page-title.html %}
 
     <div class="container">
       <div class="row">

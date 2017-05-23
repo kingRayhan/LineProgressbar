@@ -1,7 +1,6 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-
 # Build settings
 markdown: kramdown
 kramdown:
@@ -15,4 +14,6 @@ exclude:
 # Serving
 port: 5000
 host: 127.0.0.1
+
+
 

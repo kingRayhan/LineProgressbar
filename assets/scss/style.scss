@@ -2,7 +2,9 @@ body{
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 }
-
+img{
+	max-width: 100%;
+}
 
 .navbar {
     margin-bottom: 0;
@@ -15,10 +17,31 @@ body{
 	h1{
 		margin: 0;
 		font-family: 'Raleway', sans-serif;
-		font-weight: 300
+		font-weight: 300;
+
+		padding-top: 5px;
+
+		@media all and (max-width: 991px){
+			text-align: center;
+			padding-bottom: 25px;
+		}
 	}
 }
-
+.author-info {
+	@media all and (max-width: 991px){
+		text-align: center;
+	}
+	text-align: right;
+    p{
+	    font-weight: 700;
+	    font-size: 18px;
+	    margin: 0;
+	    font-family: 'Roboto Condensed', sans-serif;
+    	span{
+			font-size: 25px;
+    	}
+    }
+}
 
 .demo-title{
 	h1,h2,h3,h4{

@@ -8,7 +8,7 @@
     <title>Jquery Line Progress Bar</title>
 
 
-    
+
     <!-- OpenGraph Metas -->
     {% include og-meta.html %}
 
@@ -39,13 +39,7 @@
     {% include header.html %}
 
 
-    <section class="page-title">
-      <div class="container">
-        <div class="row">
-          <h1>{{ page.title }}</h1>
-        </div>
-      </div>
-    </section>
+    {% include page-title.html %}
 
     <div class="container">
       <div class="row">
@@ -61,6 +55,7 @@
      
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script src="dist/jquery.lineProgressbar.js"></script>
     <script src="assets/js/main.js"></script>
