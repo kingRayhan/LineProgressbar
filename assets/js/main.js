@@ -97,5 +97,6 @@ jQuery(document).ready(function($) {
 		triggerOnce: true 
 	}); // waypoint
 
+	hljs.initHighlightingOnLoad();
 
 });
