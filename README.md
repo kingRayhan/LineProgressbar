@@ -1,6 +1,9 @@
 # Jquery Line Progress Bar
 A light weight jquery progressbar plugin
 
+## Demos and Docs
+https://kingrayhan.github.io/LineProgressbar/demos.html
+
 
 
 
