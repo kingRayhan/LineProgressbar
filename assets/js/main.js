@@ -96,7 +96,8 @@ jQuery(document).ready(function($) {
 		offset: '25%',
 		triggerOnce: true 
 	}); // waypoint
-
+	
+	DemoProgressbars();
 	hljs.initHighlightingOnLoad();
 
 });
