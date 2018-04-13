@@ -1,92 +1,130 @@
 /**
- * jQuery Line Progressbar
- * Author: KingRayhan<rayhan095@gmail.com>
- * Author URL: http://rayhan.info
- * Version: 1.0.0
- */
+* jQuery Line Progressbar
+* Author: KingRayhan<rayhan095@gmail.com>
+* Author URL: http://rayhan.info
+* Version: 1.0.0
+*/
 
 (function ($) {
-    'use strict';
+  'use strict';
+  
+  $.fn.LineProgressbar = function (options) {
 
+    options = $.extend({
+      percentage: null,
+      min: null,
+      max: null,
+      value: null,
+      unit: null,
+      ShowProgressCount: true,
+      duration: 1000,
 
-    $.fn.LineProgressbar = function (options) {
+      // Styling Options
+      fillBackgroundColor: '#3498db',
+      backgroundColor: '#EEEEEE',
+      radius: '0px',
+      height: '10px',
+      width: '100%'
+    }, options);
 
-         options = $.extend({
-            percentage: null,
-            ShowProgressCount: true,
-            duration: 1000,
+    $.options = options;
+    return this.each(function (index, el) {
+      // Markup
+      $(el).html('<div class="progressbar"><div class="proggress"></div><div class="percentCount"></div></div>');
 
-            // Styling Options
-            fillBackgroundColor: '#3498db',
-            backgroundColor: '#EEEEEE',
-            radius: '0px',
-            height: '10px',
-            width: '100%'
-        }, options);
+      var progressFill = $(el).find('.proggress');
+      var progressBar = $(el).find('.progressbar');
 
-        $.options = options;
-        return this.each(function (index, el) {
-            // Markup
-            $(el).html('<div class="progressbar"><div class="proggress"></div><div class="percentCount"></div></div>');
+      progressFill.css({
+        backgroundColor: options.fillBackgroundColor,
+        height: options.height,
+        borderRadius: options.radius
+      });
+      progressBar.css({
+        width: options.width,
+        backgroundColor: options.backgroundColor,
+        borderRadius: options.radius
+      });
 
+      var widthValue = null;
+      if(options.percentage != null) {
+        widthValue = options.percentage
+      } else {
+        widthValue = ((options.value - options.min) / (options.max - options.min)) * 100
+      }
 
+      // Progressing
+      progressFill.animate(
+        {
+          width: widthValue + "%"
+        },
+        {
+          step: function (x) {
+            if (options.ShowProgressCount) {
+              if (options.percentage != null) {
+                $(el).find(".percentCount").text(Math.round(x) + "%");
+              } else {
+                $(el).find(".percentCount").text(Math.round(x/100*(options.max - options.min)+options.min) + options.unit);
+              }
+            }
+          },
+          duration: options.duration
+        }
+      );
+      ////////////////////////////////////////////////////////////////////
+    });
+  }
+  $.fn.progressTo = function (options) {
 
-            var progressFill = $(el).find('.proggress');
-            var progressBar = $(el).find('.progressbar');
+    options = $.extend({
+      percentage: null,
+      min: null,
+      max: null,
+      value: null,
+      unit: null,
+      ShowProgressCount: true,
+      duration: 1000,
 
+      // Styling Options
+      fillBackgroundColor: '#3498db',
+      backgroundColor: '#EEEEEE',
+      radius: '0px',
+      height: '10px',
+      width: '100%'
+    }, options);
 
-            progressFill.css({
-                backgroundColor: options.fillBackgroundColor,
-                height: options.height,
-                borderRadius: options.radius
-            });
-            progressBar.css({
-                width: options.width,
-                backgroundColor: options.backgroundColor,
-                borderRadius: options.radius
-            });
+    $.options = options;
+    return this.each(function (index, el) {
 
-            // Progressing
-            progressFill.animate(
-                {
-                    width: options.percentage + "%"
-                },
-                {
-                    step: function (x) {
-                        if (options.ShowProgressCount) {
-                            $(el).find(".percentCount").text(Math.round(x) + "%");
-                        }
-                    },
-                    duration: options.duration
-                }
-            );
-            ////////////////////////////////////////////////////////////////////
-        });
-    }
-    $.fn.progressTo = function (next) {
+      var progressFill = $(el).find('.proggress');
+      var progressBar = $(el).find('.progressbar');
 
-        let options = $.options;
+      var widthValue = null;
+      if(options.percentage != null) {
+        widthValue = options.percentage
+      } else {
+        widthValue = ((options.value - options.min) / (options.max - options.min)) * 100
+      }
 
-        return this.each(function (index, el) {
-
-            var progressFill = $(el).find('.proggress');
-            var progressBar = $(el).find('.progressbar');
-
-            progressFill.animate(
-                {
-                    width: next + "%"
-                },
-                {
-                    step: function (x) {
-                        if (options.ShowProgressCount) {
-                            $(el).find(".percentCount").text(Math.round(x) + "%");
-                        }
-                    },
-                    duration: options.duration
-                }
-            );
-            ////////////////////////////////////////////////////////////////////
-        });
-    }
+      progressFill.animate(
+        {
+          width: widthValue + "%"
+        },
+        {
+          step: function (x) {
+            if (options.ShowProgressCount) {
+              if (options.percentage != null) {
+                $(el).find(".percentCount").text(Math.round(x) + "%");
+              } else {
+                $(el).find(".percentCount").text(Math.round(x/100*(options.max - options.min)+options.min) + options.unit);
+              }
+            }
+          },
+          duration: options.duration
+        }
+      );
+      ////////////////////////////////////////////////////////////////////
+    });
+  }
 
 })(jQuery);

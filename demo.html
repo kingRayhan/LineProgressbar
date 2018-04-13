@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery Line Progress Bar</title>
+    <link rel="stylesheet" href="jquery.lineProgressbar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='jquery.lineProgressbar.js'></script>
+  </head>
+  <body>
+    <span style="margin-bottom: 0">Speed</span>
+    <div id="demoprogressbar1"></div>
+    <span style="margin-bottom: 0">Pourcentage</span>
+    <div id="demoprogressbar2"></div>
+    <span style="margin-bottom: 0">Temperature</span>
+    <div id="demoprogressbar3"></div>
+
+    <script>
+      $('#demoprogressbar1').LineProgressbar({
+        min: 0,
+        max: 200,
+        value: 80,
+        unit:'km/h'
+      });
+
+      $('#demoprogressbar2').LineProgressbar({
+        percentage:33
+      });
+
+      $('#demoprogressbar3').LineProgressbar({
+        min: -20,
+        max: 50,
+        value:17,
+        unit:'°C'
+      });
+
+      setTimeout("update()",2000);
+      function update() {
+        $('#demoprogressbar1').progressTo({
+          min: 0,
+          max: 200,
+          value: 160,
+          unit:'km/h',
+          duration:5000
+        });
+      }
+    </script>
+  </body>
+</html>
