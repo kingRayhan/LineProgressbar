@@ -5,17 +5,17 @@
  * Version: 1.0.0
  */
 
-(function ($) {
+(function($) {
     'use strict';
 
 
-    $.fn.LineProgressbar = function (options) {
+    $.fn.LineProgressbar = function(options) {
 
-         options = $.extend({
+        options = $.extend({
             percentage: null,
             ShowProgressCount: true,
             duration: 1000,
-
+            animation: true,
             // Styling Options
             fillBackgroundColor: '#3498db',
             backgroundColor: '#EEEEEE',
@@ -25,7 +25,7 @@
         }, options);
 
         $.options = options;
-        return this.each(function (index, el) {
+        return this.each(function(index, el) {
             // Markup
             $(el).html('<div class="progressbar"><div class="proggress"></div><div class="percentCount"></div></div>');
 
@@ -46,45 +46,61 @@
                 borderRadius: options.radius
             });
 
+
             // Progressing
-            progressFill.animate(
-                {
+            if (options.animation) {
+
+
+                progressFill.animate({
                     width: options.percentage + "%"
-                },
-                {
-                    step: function (x) {
+                }, {
+                    step: function(x) {
                         if (options.ShowProgressCount) {
                             $(el).find(".percentCount").text(Math.round(x) + "%");
                         }
                     },
                     duration: options.duration
-                }
-            );
+                });
+
+            } else {
+                progressFill.css("width", options.percentage + "%");
+                $(el).find(".percentCount").text(Math.round(options.percentage) + "%");
+            }
+
+
+
             ////////////////////////////////////////////////////////////////////
         });
     }
-    $.fn.progressTo = function (next) {
+    $.fn.progressTo = function(next) {
 
         let options = $.options;
 
-        return this.each(function (index, el) {
+        return this.each(function(index, el) {
 
             var progressFill = $(el).find('.proggress');
             var progressBar = $(el).find('.progressbar');
 
-            progressFill.animate(
-                {
+            if (options.animation) {
+
+                progressFill.animate({
                     width: next + "%"
-                },
-                {
-                    step: function (x) {
+                }, {
+                    step: function(x) {
                         if (options.ShowProgressCount) {
                             $(el).find(".percentCount").text(Math.round(x) + "%");
                         }
                     },
                     duration: options.duration
-                }
-            );
+                });
+
+
+            } else {
+                progressFill.css("width", next + "%");
+                $(el).find(".percentCount").text(Math.round(next) + "%");
+            }
+
+
             ////////////////////////////////////////////////////////////////////
         });
     }
