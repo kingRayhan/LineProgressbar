@@ -47,7 +47,7 @@ $('#progressbar1').LineProgressbar();
 | backgroundColor  | `'#EEEEEE'` | string | Defines progressbar background color. |
 | radius  | `'0px'` | string | Defines progressbar radiusness. |
 | height  | `'10px'` | string | Defines progressbar height. |
-| width  | `'100%'` | string | Defines progressbar width. |
+| animation  | `true` | boolean | Defines whather you want to enable animation or not. |
 
 
 <br>
