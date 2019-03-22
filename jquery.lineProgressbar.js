@@ -16,7 +16,6 @@
                 duration: 1000,
                 unit: '%',
                 animation: true,
-
                 // Styling Options
                 fillBackgroundColor: '#3498db',
                 backgroundColor: '#EEEEEE',
