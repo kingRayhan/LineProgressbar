@@ -87,6 +87,27 @@ jQuery(document).ready(function($) {
 			height: '65px',
 			radius: '50px'
 		});
+
+		// Demo 5
+		$('#demoprogressbar17').LineProgressbar({
+			percentage: 45,
+			unit: 'km/h'
+		});
+		$('#demoprogressbar18').LineProgressbar({
+			percentage: 85,
+			unit: 'm/s'
+		});
+
+		//Demo 6
+		$('#demoprogressbar19').LineProgressbar({
+			percentage: 45,
+			animation: true
+		});
+
+		$('#demoprogressbar20').LineProgressbar({
+			percentage: 85,
+			animation: false
+		});
 	}
 
 

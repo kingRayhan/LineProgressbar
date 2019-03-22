@@ -174,3 +174,51 @@ $('#demoprogressbar16').LineProgressbar({
 </code></pre>
 	</div>
 </div>
+
+<div class="row progressbar-start">
+	<div class="demo-title">
+		<h1>Unit</h1>
+	</div>
+	<div class="col-md-7">
+		<h4 style="margin-bottom: 0">#demoprogressbar17</h4>
+		<div id="demoprogressbar17"></div>
+		<h4 style="margin-bottom: 0">#demoprogressbar18</h4>
+		<div id="demoprogressbar18"></div>
+	</div>
+	<div class="col-md-5">
+<pre><code>
+$('#demoprogressbar17').LineProgressbar({
+  percentage: 45,
+  unit: 'km/h'
+});
+$('#demoprogressbar18').LineProgressbar({
+  percentage: 85,
+  unit: 'm/s'
+});
+</code></pre>
+	</div>
+</div>
+<div class="row progressbar-start">
+	<div class="demo-title">
+		<h1>Animation</h1>
+	</div>
+	<div class="col-md-7">
+		<h4 style="margin-bottom: 0">With animation</h4>
+		<div  id="demoprogressbar19"></div>
+		<h4 style="margin-bottom: 0">Without Animation</h4>
+		<div  id="demoprogressbar20"></div>
+	</div>
+	<div class="col-md-5">
+		<pre><code>
+$('#demoprogressbar19').LineProgressbar({
+	percentage: 45,
+	animation: true
+});
+$('#demoprogressbar20').LineProgressbar({
+	percentage: 85,
+	animation: false
+});
+
+</code></pre>
+	</div>
+</div>
