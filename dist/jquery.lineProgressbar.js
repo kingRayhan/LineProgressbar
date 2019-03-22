@@ -2,7 +2,7 @@
  * jQuery Line Progressbar
  * Author: KingRayhan<rayhan095@gmail.com>
  * Author URL: https://electronthemes.com
- * Version: 1.1.1
+ * Version: 1.1.2
  */
 
 ;(function($) {
@@ -11,9 +11,11 @@
     $.fn.LineProgressbar = function(options) {
         options = $.extend(
             {
-                percentage: null,
+                percentage: 100,
                 ShowProgressCount: true,
                 duration: 1000,
+                unit: '%',
+                animation: true,
 
                 // Styling Options
                 fillBackgroundColor: '#3498db',
@@ -46,22 +48,33 @@
                 borderRadius: options.radius,
             })
 
-            // Progressing
-            progressFill.animate(
-                {
-                    width: options.percentage + '%',
-                },
-                {
-                    step: function(x) {
-                        if (options.ShowProgressCount) {
-                            $(el)
-                                .find('.percentCount')
-                                .text(Math.round(x) + '%')
-                        }
+            /**
+             * Progress with animation
+             */
+            if (options.animation) {
+                // Progressing
+                progressFill.animate(
+                    {
+                        width: options.percentage + '%',
                     },
-                    duration: options.duration,
-                }
-            )
+                    {
+                        step: function(x) {
+                            if (options.ShowProgressCount) {
+                                $(el)
+                                    .find('.percentCount')
+                                    .text(Math.round(x) + options.unit)
+                            }
+                        },
+                        duration: options.duration,
+                    }
+                )
+            } else {
+                // Without animation
+                progressFill.css('width', options.percentage + '%')
+                $(el)
+                    .find('.percentCount')
+                    .text(Math.round(options.percentage) + '%')
+            }
         })
     }
 })(jQuery)
@@ -71,6 +84,8 @@ $('[line-progressbar]').each(function() {
     function LineProgressing() {
         $this.LineProgressbar({
             percentage: $this.data('percentage'),
+            unit: $this.data('unit'),
+            animation: $this.data('animation'),
             ShowProgressCount: $this.data('showcount'),
             duration: $this.data('duration'),
             fillBackgroundColor: $this.data('progress-color'),
