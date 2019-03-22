@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Parcel Sandbox</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../dist/jquery.lineProgressbar.css" />
+    </head>
+
+    <body>
+        <div id="p1"></div>
+        <div
+            line-progressbar
+            data-percentage="25"
+            data-unit=" degree celcious"
+            data-animation="true"
+        ></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+        <script src="../dist/jquery.lineProgressbar.js"></script>
+        <script>
+            jQuery(document).ready(function() {
+                $('#p1').LineProgressbar({
+                    percentage: 45,
+                    unit: 'km/h',
+                    animation: false,
+                })
+            })
+        </script>
+    </body>
+</html>
