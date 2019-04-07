@@ -3,16 +3,13 @@
  * Author: KingRayhan<rayhan095@gmail.com>
  * Author URL: https://electronthemes.com
  * Version: 1.1.1
- * Modified by: Raffael Bino
  */
 
 /** Progressbar class css*/
 .progressbar {
-    width: 60%;
+    width: 100%;
 	margin-top: 5px;
 	margin-bottom: 35px;
-	/* Use this margin-left when your bar width is in 60% and your screen width is shorter than 480px */
-	margin-left: 70px;
 	position: relative;
 	background-color: #EEEEEE;
 	box-shadow: inset 0px 1px 1px rgba(0,0,0,.1);
@@ -30,16 +27,4 @@
 	clear: both;
 	font-weight: bold;
 	font-family: Arial
-}
-@media only screen and (min-width: 601px) {
-	.progressbar {
-		/* Use this margin-left when your bar width is in 60% and your screen is bigger then 601px */
-		margin-left: 50px;
-	}
-}
-@media only screen and (min-width: 993px) {
-	.progressbar {
-		/* Use this margin-left when your bar width is in 60% and your screen is bigger then 993px */
-		margin-left: 85px;
-	}
 }
