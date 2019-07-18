@@ -29,9 +29,16 @@
         $.options = options
         return this.each(function(index, el) {
             // Markup
-            $(el).html(
-                '<div class="progressbar"><div class="proggress"></div><div class="percentCount"></div></div>'
-            )
+            if ($(el).data("progress-init") === undefined)
+                $(el).data("progress-init", options.percentage);
+
+            let elementProgress = $(el).data("progress-init");            
+
+            if (elementProgress === options.percentage) {
+                $(el).html(
+                    '<div class="progressbar"><div class="proggress"></div><div class="percentCount"></div></div>'
+                )
+            }
 
             var progressFill = $(el).find('.proggress')
             var progressBar = $(el).find('.progressbar')
