@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="jquery.lineProgressbar.css">
+</head>
+<body>
+    <div id="progress" data-init="true"></div>
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="jquery.lineProgressbar.js"></script>
+    <script>
+        let progress = $('#progress').LineProgressbar({
+            percentage: 50
+        });
+
+        setTimeout(() => {
+            let progress = $('#progress').LineProgressbar({
+                percentage: 20
+            });
+
+            setTimeout(() => {
+            let progress = $('#progress').LineProgressbar({
+                percentage: 70
+            });
+        }, 2000);
+        }, 2000);
+    </script>
+</body>
+</html>
